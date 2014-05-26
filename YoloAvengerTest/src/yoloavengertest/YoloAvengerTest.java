@@ -16,6 +16,7 @@ import mi6.entities.Role;
 import mi6.entities.User;
 import mi6.remote.RoleFacadeRemote;
 import mi6.remote.UserFacadeRemote;
+import mi6.remote.UserRoleFacadeRemote;
 
 /**
  *
@@ -47,6 +48,7 @@ public class YoloAvengerTest {
             ctx = new InitialContext(props);                        
             UserFacadeRemote user = (UserFacadeRemote) ctx.lookup(JNDI_NAME + "UserFacade");                
             RoleFacadeRemote role = (RoleFacadeRemote) ctx.lookup(JNDI_NAME + "RoleFacade");
+            UserRoleFacadeRemote userRole = (UserRoleFacadeRemote) ctx.lookup(JNDI_NAME + "UserRoleFacade");
             
             System.out.println("Deleting users...");
             List<User> ltu = user.findAll();
