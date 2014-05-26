@@ -51,25 +51,25 @@ public class YoloAvengerTest {
             
             List<User> listuser = user.findAll();            
             User u;
-            System.out.println("---Imprimindo Usuários---");
+            System.out.println("=== Users ===");
             for (int i = 0; i < listuser.size(); i++) {
                 u = (User) listuser.get(i);
                 System.out.println("ID: " + u.getId() + " - Nome: " + u.getName());                
             }  
-            System.out.println("Total de Usuários: " + user.count());                                    
+            System.out.println("Total of users: " + user.count());                                    
             
             System.out.println("");
-            System.out.println("------");
+            System.out.println("=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=");
             System.out.println("");
                         
             List<Role> listrole = role.findAll();            
             Role r;
-            System.out.println("---Imprimindo Regras---");
+            System.out.println("=== Roles ===");
             for (int i = 0; i < listrole.size(); i++) {
                 r = (Role) listrole.get(i);
                 System.out.println("ID: " + r.getId() + " - Nome: " + r.getName());                
             }  
-            System.out.println("Total de Regras: " + role.count());
+            System.out.println("Total of roles: " + role.count());
             
         } catch (NamingException ex) {
             Logger.getLogger(YoloAvengerTest.class.getName()).log(Level.SEVERE, null, ex);
