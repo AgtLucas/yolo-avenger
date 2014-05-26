@@ -46,8 +46,35 @@ public class YoloAvengerTest {
 
             ctx = new InitialContext(props);                        
             UserFacadeRemote user = (UserFacadeRemote) ctx.lookup(JNDI_NAME + "UserFacade");                
-            RoleFacadeRemote role = (RoleFacadeRemote) ctx.lookup(JNDI_NAME + "RoleFacade");    
-                      
+            RoleFacadeRemote role = (RoleFacadeRemote) ctx.lookup(JNDI_NAME + "RoleFacade");
+            
+            System.out.println("Deleting users...");
+            List<User> ltu = user.findAll();
+            for(User uuu: ltu) {
+                user.remove(uuu);
+            }
+            System.out.println("");
+            
+            System.out.println("Deleting roles...");
+            List<Role> ltr = role.findAll();
+            for(Role rrr: ltr) {
+                role.remove(rrr);
+            }
+            System.out.println("");
+            
+            System.out.println("Creating user....");
+            User uu = new User();
+            uu.setName("Lucas");
+            user.create(uu);
+            System.out.println("User created!");
+            System.out.println("");
+            
+            System.out.println("Creating role....");
+            Role rr = new Role();
+            rr.setName("Master");
+            role.create(rr);
+            System.out.println("Role created!");  
+            System.out.println("");
             
             List<User> listuser = user.findAll();            
             User u;
