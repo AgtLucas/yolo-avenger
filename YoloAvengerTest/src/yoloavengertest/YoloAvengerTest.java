@@ -71,7 +71,7 @@ public class YoloAvengerTest {
             
             System.out.println("Creating role....");
             Role rr = new Role();
-            rr.setName("Master");
+            rr.setName("Spy");
             role.create(rr);
             System.out.println("Role created!");  
             System.out.println("");
