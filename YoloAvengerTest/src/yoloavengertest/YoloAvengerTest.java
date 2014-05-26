@@ -65,6 +65,13 @@ public class YoloAvengerTest {
             }
             System.out.println("");
             
+            System.out.println("Deleting UserRoles...");
+            List<UserRole> userRoleLst = userRole.findAll();
+            for(UserRole uurr: userRoleLst) {
+                userRole.remove(uurr);
+            }
+            System.out.println("");
+            
             System.out.println("Creating user....");
             User uu = new User();
             uu.setName("Lucas");
@@ -78,6 +85,18 @@ public class YoloAvengerTest {
             role.create(rr);
             System.out.println("Role created!");  
             System.out.println("");
+            
+            System.out.println("Adding Role to user");
+            List<Role> ltr2 = role.findAll();
+            for (Role rr2: ltr2) {
+                List<User> ltu2 = user.findAll();
+                for (User uu2: ltu2) {
+                    UserRole uR2 = new UserRole();
+                    uR2.setUserId(uu2.getId());
+                    uR2.setRoleId(rr2.getId());
+                    userRole.create(uR2);
+                }
+            }
             
             List<User> listuser = user.findAll();            
             User u;
