@@ -14,6 +14,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import mi6.entities.Role;
 import mi6.entities.User;
+import mi6.entities.UserRole;
 import mi6.remote.RoleFacadeRemote;
 import mi6.remote.UserFacadeRemote;
 import mi6.remote.UserRoleFacadeRemote;
@@ -99,6 +100,20 @@ public class YoloAvengerTest {
                 System.out.println("ID: " + r.getId() + " - Nome: " + r.getName());                
             }  
             System.out.println("Total of roles: " + role.count());
+            
+            System.out.println("");
+            System.out.println("=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=");
+            System.out.println("");
+                        
+            List<UserRole> ltur = userRole.findAll();            
+            UserRole uR;
+            System.out.println("=== Roles ===");
+            for (int i = 0; i < ltur.size(); i++) {
+                uR = (UserRole) ltur.get(i);
+                System.out.println("Role ID: " + uR.getRoleId() + " - User ID: " + uR.getUserId());                
+            }  
+            System.out.println("Total of roles: " + role.count());
+            System.out.println("");
             
         } catch (NamingException ex) {
             Logger.getLogger(YoloAvengerTest.class.getName()).log(Level.SEVERE, null, ex);

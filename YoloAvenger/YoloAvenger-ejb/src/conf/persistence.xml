@@ -4,6 +4,7 @@
     <jta-data-source>Delta2</jta-data-source>
     <class>mi6.entities.Role</class>
     <class>mi6.entities.User</class>
+    <class>mi6.entities.UserRole</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
