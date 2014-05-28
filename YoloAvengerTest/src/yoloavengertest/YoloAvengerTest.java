@@ -121,7 +121,7 @@ public class YoloAvengerTest {
             System.out.println("Total of roles: " + role.count());
             
             System.out.println("");
-            System.out.println("=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=");
+            System.out.println("=x=x= x=x=x=x=x=x=x=x=x=x=x=x=x=");
             System.out.println("");
                         
             List<UserRole> ltur = userRole.findAll();            
@@ -132,6 +132,22 @@ public class YoloAvengerTest {
                 System.out.println("Role ID: " + uR.getRoleId() + " - User ID: " + uR.getUserId());                
             }  
             System.out.println("Total of roles: " + role.count());
+            System.out.println("");
+            
+            System.out.println("Editing user...");
+            List<User> userToEdit = user.findAll();
+            for(User ut: userToEdit) {
+                ut.setName(ut.getName() + "+");
+                user.edit(ut);
+            }
+            System.out.println("");
+            
+            System.out.println("Editing role...");
+            List<Role> roleToEdit = role.findAll();
+            for(Role rt: roleToEdit) {
+                rt.setName(rt.getName() + "++");
+                role.edit(rt);
+            }
             System.out.println("");
             
         } catch (NamingException ex) {
